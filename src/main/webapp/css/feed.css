@@ -1,0 +1,892 @@
+/* custom reset.css */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+input, button {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+}
+
+.wrap.feed {
+    width: 100%;
+    height: 100vh;
+}
+
+.feed .background {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -9999;
+    background-color: #fafbfc;
+}
+
+/* css 겹치는 부분 초기화 */
+.feed a {
+	color: inherit;
+}
+
+.top nav,
+.left-aside nav,
+.site-info nav {
+    height: auto;
+    float: none;
+}
+
+.top nav ul,
+.left-aside nav ul,
+.site-info nav ul  {
+    margin: 0;
+    display: block;
+}
+
+.top nav >ul>li,
+.left-aside nav >ul>li,
+.site-info nav >ul>li  {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* Feed 공통 UI */
+.feed .mcolr {
+    color: #aacb7c;
+}
+.feed .mcolr-gradi {
+    background: linear-gradient(to right, #9b52c7 50%, #e4aac3);
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.feed .mbgcolr {
+    color: #fff;
+    background: linear-gradient(to right, #9979c2 40%, #fcd2d3);
+}
+.feed .ct-box {
+    padding: 25px;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+/* top menu */
+.feed .top {
+    top: 87px;
+	height: 34px;
+    line-height: 34px;
+    background-color: #9576bc;
+    box-shadow: 2px 5px 5px rgba(100, 100, 100, 0.15);
+	position: fixed;
+    z-index: 5;
+    width: 100%;
+}
+
+.feed .top nav {
+    position: relative;
+    right: 20px;
+    width: 580px;
+    margin: 0 auto;
+}
+
+.feed .top nav ul {
+	display: flex;
+	justify-content: center;
+}
+
+.feed .top nav a {
+	position: relative;
+	display: block;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 17px;
+    color: #fff;
+    font-size: 14px;
+	transition: background 0.3s;
+}
+
+.feed .top nav li:hover a {
+	background-color: #9b52c7;
+	font-weight: bold;
+}
+
+.feed .top nav li:first-child a::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	width: 1px;
+	height: 16px;
+	background-color: #d8d8d8;
+}
+
+/* 가운데 검색창 */
+.feed .search-wrap {
+    width: 580px;
+    height: 80px;
+    background: #fafbfc;
+    z-index: 3;
+    position: fixed;
+    top: 120px;
+}
+
+.feed .search-wrap::after {
+	content: '';
+	display: block;
+	width: 572px;
+	height: 100%;
+    transform: translateX(4px);
+    border-bottom: 1px solid #ebebeb;
+}
+
+.feed .search {
+    padding: 0;
+    box-shadow: 5px 5px 5px rgba(200, 200, 200, 0.15), 
+    			-5px -5px 5px rgba(200, 200, 200, 0.15);
+    			
+	position: fixed;
+    width: 100%;
+    max-width: 580px;
+    top: 140px;
+    z-index: 10;
+    transform: translateY(20px);
+}
+
+.feed .search-form {
+    display: flex;
+    height: 38px;
+    justify-content: space-between;
+    line-height: 38px;
+}
+
+.feed .search-input {
+	width: 88%;
+    padding-left: 20px;
+}
+
+.feed .search-btn {
+	position: relative;
+}
+
+.feed .search-submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: transparent;
+    width: 50px;
+    display: block;
+    height: 100%;
+    color: transparent;
+}
+
+.feed .search-btn i {
+	padding-right: 15px;
+	color: #7b7b7b;
+}
+
+/* aside size만 잡고 main은 min-width에 width 100% */
+/* main */
+.feed .container {
+    /*display: flex;*/
+    position: relative;
+    /*justify-content: space-between;*/
+    max-width: 1080px;
+    width: 100%;
+    height: calc(100vh - 110px);
+    /* padding: 40px 0 0; */
+    
+	margin: 34px auto 0;
+}
+
+.feed .artboard .container {
+    margin-top: 100px;
+}
+
+/* 왼쪽 메뉴  */
+.feed .left-aside {
+    position: fixed;
+    max-width: 209px;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    padding-top: 200px;
+}
+
+/* 가운데 콘텐츠 영역 */
+.feed .main {
+    width: 100%;
+    max-width: 580px;
+    margin: 240px auto 0;
+}
+
+.feed.artboard .main {
+	max-width: 830px;
+    margin: 20px 0 0;
+}
+
+/* 오른쪽 메뉴 */
+.feed .right-aside {
+    position: fixed;
+    top: 0;
+    padding-top: 150px;
+    /*right: 370px;*/
+    right: 290px;
+    height: 100vh;
+    max-width: 249px;
+}
+
+.feed .right-aside section {
+    width: 100%;
+	margin: 0 auto 20px;
+    padding: 20px 30px;
+}
+.feed .user-info {
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+	height: 78px;
+	font-size: 12px;
+    padding: 20px 10px;
+}
+
+.feed .user-profile > a {
+    overflow: hidden;
+    display: block;
+	width: 40px;
+	height: 40px;
+    border-radius: 50%;
+}
+
+.feed .user-text {
+	margin-left: 10px;
+}
+
+.feed .user-text a {
+	color: #323232;
+	
+}
+.feed .user-text span {
+	color: #8d929a;
+	
+}
+
+/* main - left-aside */
+.feed .profile-image {
+    text-align: center;
+}
+
+.feed .profile-name {
+	font-weight: bold;	
+}
+
+.feed .profile-image a {
+	display: block;
+	width: 130px;
+	height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #9b52c7 5%, #e4aac3);
+    margin: 20px auto;
+}
+
+.feed .side-nav {
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.feed .side-nav a {
+    display: block;
+    width: 100%;
+    margin: 0 0 35px;
+    color: #343a40;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    transition: color 0.3s;
+}
+
+.feed .side-nav a.on {
+	color: #9b52c7;
+	font-weight: bold;
+}
+
+.feed .side-nav li:hover a {
+	color: #9b52c7;
+}
+
+/* main - post-area */
+.feed .addpost-area,
+.feed .post-box {
+    margin-bottom: 20px;
+}
+
+.feed .addpost-area {
+	min-height: 220px;
+}
+
+.feed .addpost-title {
+    display: flex;
+    margin-bottom: 25px;
+}
+.feed .content-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feed .content-main {
+	line-height: 22px;
+    word-break: break-all;
+    margin: 30px 0;
+    color: #223;
+}
+
+.feed .writer-profile {
+    width: 40px;
+    height: 40px;
+}
+.feed .writer-profile img {
+    width: 100%;
+    border-radius: 50%;
+}
+.feed .content-area {
+    position: relative;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.feed  .post-input-area {
+    width: 100%;
+}
+
+.feed .content-area .textarea {
+    resize: none;
+	width: 100%;
+	max-height: 520px;
+    border: 0;
+	color: #222;
+	font-size: 12px;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.feed .content-area .textarea::-webkit-scrollbar {
+	background: #fff;
+}
+
+.feed .content-area .textarea::-webkit-scrollbar-thumb {
+	border: 1px solid #d8d8d8;
+}
+.feed .content-area .textarea.placeholder {
+    color: #999;
+}
+
+.feed .input-images {
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.feed .addpost-btns {
+    display: flex;
+    justify-content: space-between;
+}
+.feed .secret-post {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.feed .secret-post span i {
+	color: #ccc;
+    font-size: 22px;
+    cursor: pointer;
+}
+.feed .secret-post span.on i {
+	color: #a363d9;
+}
+
+.feed .secret-btn-text {
+	color: #ccc;
+	font-weight: normal;
+	margin-left: 7px;
+}
+.feed .secret-btn-text.on {
+	color: #555;
+	font-weight: bold;
+}
+
+.feed .add-file {
+    display: block;
+    float: right;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.feed .add-file i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+.feed .images {
+    clear: both;
+}
+.feed .submit-area {
+    overflow: hidden;
+}
+.feed .addpost-btn {
+    float: right;
+    width: 70px;
+    height: 34px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.feed .post-box {
+    min-height: 300px;
+}
+.feed .post-box .writer-info {
+	margin-left: 15px;
+}
+.feed .writer {
+    display: flex;
+}
+
+.feed .post-menu a {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feed .post-menu span {
+	width: 3px;
+    height: 3px;
+    background-color: #887;
+    border-radius: 50%;
+}
+
+.feed .end {
+	padding-bottom: 20px;
+}
+
+.feed .comment-input input {
+    width: calc(100% - 68px);
+    height: 40px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.feed .content-reactions {
+	display: flex;
+	justify-content: left;
+	margin: 20px 0;
+	padding: 20px 0;
+	color: #878e96;
+	font-size: 14px;
+	border-top: 1px solid #ebebeb;
+	border-bottom: 1px solid #ebebeb;
+    transition: color 0.3s;
+}
+
+.feed .content-reactions div:hover {
+	color: #9b52c7;
+    font-width: bold;
+}
+.feed .content-reactions div {
+	margin-right: 30px;
+}
+
+.feed .comment-area {
+	display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.feed .commenter-image img {
+	border-radius: 50%;
+}
+
+.feed .comment-input {
+	width: 100%;
+    margin-left: 10px;
+    position: relative;
+    background-color: #f5f7fa;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+}
+.feed .comment-input button {
+	position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    padding: 0 20px;
+    color: #9b52c7;
+}
+
+/* 인기태그 */
+.feed .popular-tags {
+    /* height: 288px; */
+    height: 300px;
+}
+
+.feed .popular-tags h5 {
+    color: #323232;
+    font-weight: bold;
+    font-size: 15px;
+}
+.feed .tags-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+.feed .tag-group {
+	width: 50%;
+}
+
+.feed .tag-group a {
+	position: relative;
+	display: block;
+    height: 41px;
+    line-height: 41px;
+    margin: 0 5px;
+    text-align: left;
+    font-size: 12px;
+    color: #9b52c7;
+    border-bottom: 1px solid #efefef;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+.feed .tag-group a::after {
+	content: ''; 
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 3px;
+	background: linear-gradient(to right, #9b52c7 10%, #e4aac3);
+	transition: all 0.2s;
+}
+
+.feed .tag-group a:hover {
+	font-weight: bold;
+}
+
+.feed .tag-group a:hover::after {
+	left: 0;
+	width: 100%;
+}
+
+/* footer */
+.feed .site-info {
+	font-size: 12px;
+	color: #b1b1b2;
+}
+
+/* 아트피드 */
+.artfeed .post-art {
+    text-align: center;
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+.artfeed .post-art button {
+	width: 130px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #9b52c7;
+    border-radius: 6px;
+    color: #fff;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.artfeed .content-main {
+	display: flex;
+}
+
+.artfeed .content-img{
+    min-height: 300px;
+    width: 50%;
+    border: 1px solid #f2f2f2;
+    box-sizing: border-box;
+    margin-right: 10px;
+    border-radius: 10px;
+    background: #fdfdfd;
+}
+.artfeed .content-img:last-child {
+	margin: 0;
+}
+
+/* 아트보드 */
+.wrap.artboard {
+	overflow: hidden;
+}
+
+.artfeed .canvas-area {
+	padding: 0;
+	width: 790px;
+	height: 580px;
+	background-color: #fff;
+}
+
+.artfeed .tools {
+	position: relative;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 374px;
+}
+
+.artfeed .colors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artfeed .colors > div {
+	display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.artfeed .colors div .color {
+	width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 2px 4px rgba(100, 100, 100, 0.3);
+}
+
+.artboard .color.red {
+    background-color: #db3838;
+}
+.artboard .color.green {
+    background-color: #b2c225;
+}
+.artboard .color.blue {
+    background-color: #40a4d8;
+}
+.artboard .color.yellow {
+    background-color: #fecc2f;
+}
+.artboard .color.purple {
+    background-color: #a363d9;
+}
+.artboard .color.pink {
+	background-color: #ee657a;
+}
+.artboard .color.black {
+    background-color: #223;
+}
+.artboard .color.white {
+    background-color: #fefefe;
+}
+
+.artfeed .picker {
+	position: absolute;
+	top: 0;
+    right: -330px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 10px #eee;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgba(200, 200, 200, 0.15), 
+    			-5px -5px 5px rgba(200, 200, 200, 0.15);
+}
+
+/* 아트보드 수정 */
+.artboard .canvas-wrap {
+    margin: 0 auto;
+    margin-top: 200px;
+    max-width: 800px;
+}
+
+.artboard .canvas-wrap #canvas {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(200, 200, 200, 0.15),
+    -5px -5px 5px rgba(200, 200, 200, 0.15);
+    background-color: #fff;
+}
+
+.artboard .ab-tools {
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.artboard .ab-colors {
+    overflow: hidden;
+    margin: 15px auto 0;
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.artboard .color {
+    text-indent: -9999px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    box-shadow: 2px 2px 5px rgba(100, 100, 100, 0.3);
+}
+
+.artboard .ab-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 0 0 20px;
+}
+
+.artboard .ab-btns > a {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #a363d9;
+    text-align: center;
+}
+
+.artboard .brush-size-input {
+    box-sizing: border-box;
+    padding: 30px 20px;
+}
+
+.artboard .picker-btn {
+    background:  radial-gradient(circle at 50% 0,
+    rgba(255,0,0,.5),
+    rgba(255,0,0,0) 70.71%),
+    radial-gradient(circle at 6.7% 75%,
+            rgba(0,0,255,.5),
+            rgba(0,0,255,0) 70.71%),
+    radial-gradient(circle at 93.3% 75%,
+            rgba(0,255,0,.5),
+            rgba(0,255,0,0) 70.71%) beige;
+}
+
+.artboard .picker {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    display: block;
+    transform: translateY(-50%);
+}
+
+/* 첨부파일 미리보기 */
+.feed .image-preview {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+}
+
+.feed .image-preview.scrollbar {
+    overflow-x: scroll;
+}
+
+.feed .image-preview > img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.feed .upload-file > img {
+    width: 100%;
+}
+
+.feed .tags {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.feed .tags > a {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #ddd;
+    color: #223;
+    padding: 5px 10px;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.feed .tags > a:hover {
+    background: #a363d9;
+    color: #f5f7fa;
+}
+
+.feed .comments-box {
+    margin-top: 20px;
+}
+
+.feed .comments-box > div {
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+.feed .comments-box .comment-member-info,
+.feed .nested-comment .comment-member-info {
+    padding: 10px;
+    background-color: #f5f7fa;
+    border-radius: 0 10px 10px 10px;
+    color: #223;
+}
+
+.feed .nested-comment {
+    margin-left: 30px;
+}
+
+.feed .nested-comment .comment-member-info {
+    background-color: #f7faf5;
+    color: #223;
+}
+
+.feed .comments-box span i {
+    color: #e4aac3;
+}
+
+.feed .nested-comment span i {
+    color: #9b52c7;
+}
+
+.feed .comment-member-aka {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.feed .comments-box form {
+    display: inline-block;
+}
+
+.feed .btns > * {
+    padding: 10px;
+    border: 1px solid #9b52c7;
+    background-color: #9979c2;
+    color: #fff;
+}
+
+.feed .btns > input {
+    font-weight: bold;
+}
